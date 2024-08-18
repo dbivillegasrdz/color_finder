@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <h1>Most Common Colors</h1>
+    <img src="{{ image_url }}" alt="Uploaded Image">
+    <ul>
+        {% for color in colors %}
+        <li style="background-color: rgb{{ color.color }}; padding: 10px;">
+            Color: rgb{{ color.color }} - Count: {{ color.count }}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('upload_image') }}">Upload another image</a>
+</body>
+</html>
